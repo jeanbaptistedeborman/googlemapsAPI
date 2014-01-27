@@ -20,6 +20,7 @@
 		src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD6phFHJZTYJXyp5oNOgR0QBQI6w5vn0eg&sensor=true"></script>
 		<script type="text/javascript">
 			function initialize() {
+				 var markers = [];
 				var mapOptions = {
 					center : new google.maps.LatLng(50.5333, 4.7667),
 					zoom : 7
@@ -42,54 +43,53 @@
 				});
 
 				/// searchbox
-				
-				 // Create the search box and link it to the UI element.
-  var input = /** @type {HTMLInputElement} */(
-      document.getElementById('pac-input'));
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-				
-				
+
+				// Create the search box and link it to the UI element.
+				var input = /** @type {HTMLInputElement} */(
+					document.getElementById('pac-input'));
+				map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
 				var searchBox = new google.maps.places.SearchBox(
 				/** @type {HTMLInputElement} */(input));
 
-			
-				 google.maps.event.addListener(searchBox, 'places_changed', function() {
-				 console.log ('places_changed'); 	
-				 var places = searchBox.getPlaces();
+				google.maps.event.addListener(searchBox, 'places_changed', function() {
+					console.log('places_changed');
+					var places = searchBox.getPlaces();
 
-				 for (var i = 0, marker; marker = markers[i]; i++) {
-				 marker.setMap(null);
-				 }
+					for (var i = 0, marker; marker = markers[i]; i++) {
+						marker.setMap(null);
+					}
 
-				 // For each place, get the icon, place name, and location.
-				 markers = [];
-				 var bounds = new google.maps.LatLngBounds();
-				 for (var i = 0, place; place = places[i]; i++) {
-				 var image = {
-				 url: place.icon,
-				 size: new google.maps.Size(71, 71),
-				 origin: new google.maps.Point(0, 0),
-				 anchor: new google.maps.Point(17, 34),
-				 scaledSize: new google.maps.Size(25, 25)
-				 };
+					// For each place, get the icon, place name, and location.
+					markers = [];
+					
+					
+					var bounds = new google.maps.LatLngBounds();
+					for (var i = 0, place; place = places[i]; i++) {
+						var image = {
+							url : place.icon,
+							size : new google.maps.Size(71, 71),
+							origin : new google.maps.Point(0, 0),
+							anchor : new google.maps.Point(17, 34),
+							scaledSize : new google.maps.Size(25, 25)
+						};
 
-				 // Create a marker for each place.
-				 var marker = new google.maps.Marker({
-				 map: map,
-				 icon: image,
-				 title: place.name,
-				 position: place.geometry.location
-				 });
+						// Create a marker for each place.
+						var marker = new google.maps.Marker({
+							map : map,
+							icon : image,
+							title : place.name,
+							position : place.geometry.location
+						});
 
-				 markers.push(marker);
+						markers.push(marker);
 
-				 bounds.extend(place.geometry.location);
-				 }
+						bounds.extend(place.geometry.location);
+					}
 
-				 map.fitBounds(bounds);
-				 });
+					map.fitBounds(bounds);
+				});
 
-				
 			}
 
 
@@ -97,7 +97,7 @@
 		</script>
 	</head>
 	<body>
-		 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 		<div id="map-canvas"/>
 	</body>
 </html>
