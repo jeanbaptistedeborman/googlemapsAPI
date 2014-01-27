@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 500px; width:500px }
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6phFHJZTYJXyp5oNOgR0QBQI6w5vn0eg&sensor=true">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(50.5333, 4.7667),
-          zoom: 7
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"/>
-  </body>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			html {
+				height: 100%
+			}
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0
+			}
+			#map-canvas {
+				height: 500px;
+				width: 500px
+			}
+		</style>
+		<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6phFHJZTYJXyp5oNOgR0QBQI6w5vn0eg&sensor=true"></script>
+		<script type="text/javascript">
+			function initialize() {
+				var mapOptions = {
+					center : new google.maps.LatLng(50.5333, 4.7667),
+					zoom : 7
+				};
+				var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+				var myLatlng = new google.maps.LatLng(45.5333, 6.7667);
+				var marker = new google.maps.Marker({
+
+					position : myLatlng,
+					map : map,
+					title : 'Hello World!'
+				});
+
+			}
+
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+	</head>
+	<body>
+		<div id="map-canvas"/>
+	</body>
 </html>
