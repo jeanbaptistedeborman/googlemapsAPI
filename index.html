@@ -84,7 +84,8 @@
 
 						markers.push(marker);
 
-						bounds.extend(place.geometry.location);
+						bounds.extend(place.geometry.location, 10000);
+					
 					}
 
 					map.fitBounds(bounds);
