@@ -84,11 +84,12 @@
 
 						markers.push(marker);
 
-						bounds.extend(place.geometry.location, 10000);
+						bounds.extend(place.geometry.location);
 					
 					}
 
 					map.fitBounds(bounds);
+					  this.map.set_zoom(10); 
 				});
 
 			}
