@@ -66,6 +66,7 @@
 					
 					var bounds = new google.maps.LatLngBounds();
 					for (var i = 0, place; place = places[i]; i++) {
+					    console.log (place);  
 					  
 					    var type = place.types[0];
 					     
@@ -92,7 +93,7 @@
 					}
 
 					map.fitBounds(bounds);
-					if (type === "locality") { 
+					if (type === "street_adress") { 
 					  map.setZoom(12); 
 					  }
 				});
