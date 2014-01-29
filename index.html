@@ -66,8 +66,8 @@
 					
 					var bounds = new google.maps.LatLngBounds();
 					for (var i = 0, place; place = places[i]; i++) {
-					    console.log (place); 
-					    alert (place.types[0]);
+					  
+					    var type = place.types[0];
 					     
 						var image = {
 							url : place.icon,
@@ -92,7 +92,9 @@
 					}
 
 					map.fitBounds(bounds);
-					  map.setZoom(10); 
+					if (type === "locality") { 
+					  map.setZoom(12); 
+					  }
 				});
 
 			}
