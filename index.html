@@ -85,10 +85,12 @@
 							position : place.geometry.location
 						});
 
-						google.maps.event.addListener(marker, 'click', function() {
-							alert('click' + marker.title);
-						});
+						
 						markers.push(marker);
+						
+						google.maps.event.addListener(marker, 'click', function() {
+							alert('click' + marker);
+						});
 
 						bounds.extend(place.geometry.location);
 
