@@ -19,6 +19,8 @@
 		<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD6phFHJZTYJXyp5oNOgR0QBQI6w5vn0eg&sensor=true"></script>
 		<script type="text/javascript">
+		
+	
 			function initialize() {
 				var markers = [];
 				var mapOptions = {
@@ -36,25 +38,41 @@
 				
 				
 				
-				
+				var myLatlng = new google.maps.LatLng(50.8, 4.31);
 				var marker1 = new google.maps.Marker({
-					icon : 'on.png',
+					icon : 'cafe.png',
 					position : myLatlng,
 					map : map,
+					data:"hello1",
+					url : cafe.html,
 					title : 'test click!'
 				});
+				
+				markers.push (marker1 ); 
 
-				var myLatlng = new google.maps.LatLng(50.40, 4.9);
+				var myLatlng = new google.maps.LatLng(50.81, 4.3);
 				var marker2 = new google.maps.Marker({
-					icon : 'off.png',
+					icon : 'piscine.png',
 					position : myLatlng,
+					url : piscine.html,
 					map : map,
-					data:"hello",
+					data:"hello2",
 					title : 'test click 2!'
 				});
-				google.maps.event.addListener(marker2, 'click', function() {
-							alert('click' + marker2.data);
+				markers.push (marker2 ); 
+				
+				for (var n=0; n<markers.length; n++ ) {
+					
+					var mark = markers[n];
+					
+						google.maps.event.addListener(mark, 'click', function() {
+							alert('click' + mark.data);
 				});
+					
+				}
+				
+				
+			
 
 
 				/// searchbox
