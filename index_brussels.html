@@ -39,7 +39,7 @@
 				
 				
 				var myLatlng = new google.maps.LatLng(50.8, 4.31);
-				var marker1 = new google.maps.MarkerWithLabel ({
+				var marker1 = new google.maps.Marker ({
 					icon : 'cafe.png',
 					position : myLatlng,
 					map : map,
@@ -69,9 +69,11 @@
 					var mark = markers[n];
 					
 						google.maps.event.addListener(mark, 'click', function() {
-							var data=JSON.stringify (this.position);
-							alert (data);
-							window.location.href = this.url; 
+							var data={}
+							data.position = this.position;
+							data.title = this.title; 
+							
+							window.location.href = destination.html?data=JSON.stringify (data); 
 				});
 					
 				}
