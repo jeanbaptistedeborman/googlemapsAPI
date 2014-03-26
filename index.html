@@ -39,10 +39,11 @@
 					icon : 'off.png',
 					position : myLatlng,
 					map : map,
+					data:"hello",
 					title : 'test click 2!'
 				});
 				google.maps.event.addListener(marker2, 'click', function() {
-							alert('click' + marker2.title);
+							alert('click' + marker2.data);
 				});
 
 
