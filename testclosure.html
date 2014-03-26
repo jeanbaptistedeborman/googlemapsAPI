@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>testclosure</title>
+		<meta name="description" content="">
+		<meta name="author" content="Jean-Baptiste">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>testclosure</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+
+			<div>
+			<div class='test'>BUTTON1</div>	
+			<div class='test'>BUTTON2</div>	
+			<script>
+			
+				function alertWrapper (index) {
+					alert ("alertWrapper" + index); 
+					
+					
+				}
+				var array=document.getElementsByClassName ('test');
+				console.log (array);
+				for (var n=0; n<array.length; n++) {
+					
+					var el = array[n]; 
+					
+					
+				el.onclick = (function () {
+					//alert ('click');
+					
+					var current_index = n; 
+					return function () {
+						
+						alertWrapper (current_index);
+										
+					};  
+						//alert (n); 
+				}) ();
+				
+				 
+				}
+			</script>
+
+
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by Jean-Baptiste
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

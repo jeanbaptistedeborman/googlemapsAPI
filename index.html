@@ -27,20 +27,24 @@
 				};
 				var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 				var myLatlng = new google.maps.LatLng(50.20, 5);
-				var marker = new google.maps.Marker({
+				var marker1 = new google.maps.Marker({
 					icon : 'on.png',
 					position : myLatlng,
 					map : map,
-					title : 'Hello World!'
+					title : 'test click!'
 				});
 
 				var myLatlng = new google.maps.LatLng(50.40, 4.9);
-				var marker = new google.maps.Marker({
+				var marker2 = new google.maps.Marker({
 					icon : 'off.png',
 					position : myLatlng,
 					map : map,
-					title : 'Hello World!'
+					title : 'test click 2!'
 				});
+				google.maps.event.addListener(marker2, 'click', function() {
+							alert('click' + marker);
+				});
+
 
 				/// searchbox
 
@@ -88,10 +92,7 @@
 						
 						markers.push(marker);
 						
-						google.maps.event.addListener(marker, 'click', function() {
-							alert('click' + marker);
-						});
-
+					
 						bounds.extend(place.geometry.location);
 
 					}
