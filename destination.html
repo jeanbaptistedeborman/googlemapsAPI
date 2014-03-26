@@ -17,14 +17,13 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 		<script>
-		var data_str = location.href.split("data=")[1]; 
-		var data = JSON.parse (data_str)
-			alert (data.position);µ
-			
-			
-			
+		alert ("reception");
+			var data_str = location.href.split("data=")[1];
+			var data = JSON.parse(unescape (data_str));
+			alert(data.position);
+
 		</script>
-		
+
 	</head>
 
 	<body>
