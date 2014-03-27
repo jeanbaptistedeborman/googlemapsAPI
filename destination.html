@@ -52,7 +52,7 @@
 				var markers = [];
 				var mapOptions = {
 					center : new google.maps.LatLng(data.position.k, data.position.A),
-					zoom : 12 
+					zoom : 16 
 				};
 				var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 				
@@ -62,15 +62,12 @@
 				
 				var myLatlng = new google.maps.LatLng(data.position.k, data.position.A);
 				var marker1 = new google.maps.Marker ({
-					icon : 'cafe.png',
+					
 					position : myLatlng,
 					map : map,
 					data:"hello1",
 					url : "cafe.html",
-					title : 'test click!',
-					labelContent: "$425K",
-       labelAnchor: new google.maps.Point(22, 0),
-       labelStyle: {opacity: 0.75}
+					title : data.title 
 				});
 				
 				markers.push (marker1 ); 
@@ -157,13 +154,21 @@
 
 
 			google.maps.event.addDomListener(window, 'load', initialize);
+			
+			function init () {
+				alert ("init"); 
+				document.getElementsByTagName ("h1")[0].innerHTML =data.title; 
+				
+				
+				
+			}
 		</script>
 
 		</script>
 
 	</head>
 
-	<body>
+	<body onload="init ()">
 		<div>
 			<header>
 				<h1>reception</h1>
@@ -178,7 +183,7 @@
 			</nav>
 
 			<div>
-						<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+	
 		<div id="map-canvas"/>
 
 			</div>
