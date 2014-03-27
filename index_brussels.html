@@ -158,8 +158,9 @@ var myLatlng = new google.maps.LatLng(50.796184, 4.317237);
 							data.position = this.position;
 							data.title = this.title; 
 							var url = "destination.html?data=" + encodeURI (JSON.stringify(data));
-							alert (url); 
 							console.log (url);
+							alert (url); 
+							
 							window.location.href = url; 
 				});
 					
