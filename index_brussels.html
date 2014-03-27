@@ -157,7 +157,7 @@ var myLatlng = new google.maps.LatLng(50.796184, 4.317237);
 							data.position = this.position;
 							data.title = this.title; 
 							
-							window.location.href = "destination.html?data=" + JSON.stringify (data); 
+							window.location.href = "destination.html?data=" + encodeURI (JSON.stringify(data)); 
 				});
 					
 				}

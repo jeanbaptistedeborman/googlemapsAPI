@@ -54,7 +54,7 @@
 			//alert ("reception");
 
 			var data_str = location.href.split("data=")[1];
-			var data = JSON.parse(unescape (data_str));
+			var data = JSON.parse(decodeURI (data_str));
 			console.log (data);
 			
 			
