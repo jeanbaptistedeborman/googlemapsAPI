@@ -51,7 +51,7 @@
 			function initialize() {
 				var markers = [];
 				var mapOptions = {
-					center : new google.maps.LatLng(data.position.A, data.position.k),
+					center : new google.maps.LatLng(data.position.k, data.position.A),
 					zoom : 7
 				};
 				var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -60,7 +60,7 @@
 				
 				
 				
-				var myLatlng = new google.maps.LatLng(data.position.A, data.position.k);
+				var myLatlng = new google.maps.LatLng(data.position.k, data.position.A);
 				var marker1 = new google.maps.Marker ({
 					icon : 'cafe.png',
 					position : myLatlng,
@@ -75,16 +75,7 @@
 				
 				markers.push (marker1 ); 
 
-				var myLatlng = new google.maps.LatLng(50.81, 4.3);
-				var marker2 = new google.maps.Marker({
-					icon : 'piscine.png',
-					position : myLatlng,
-					url : "piscine.html",
-					map : map,
-					data:"hello2",
-					title : 'test click 2!'
-				});
-				markers.push (marker2 ); 
+		
 				
 				for (var n=0; n<markers.length; n++ ) {
 					
