@@ -43,22 +43,33 @@
 					icon : 'cafe.png',
 					position : myLatlng,
 					map : map,
-					url : "cafe.html",
 					title : 'Au Vieux Spijtigen Duivel',
 				});
 				
 				markers.push (marker1 ); 
 
-				var myLatlng = new google.maps.LatLng(50.81, 4.3);
+				var myLatlng = new google.maps.LatLng(50.848672, 4.356258);
 				var marker2 = new google.maps.Marker({
-					icon : 'piscine.png',
+					icon : 'cafe.png',
 					position : myLatlng,
-					url : "piscine.html",
 					map : map,
-					data:"hello2",
-					title : 'test click 2!'
+					title : 'À la Mort Subite'
 				});
 				markers.push (marker2 ); 
+				
+				
+				
+				var myLatlng = new google.maps.LatLng(50.794583, 4.334572);
+				var marker2 = new google.maps.Marker({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : "Misverstand ('t)"
+				});
+				markers.push (marker2 );
+				
+				
+				
 				
 				for (var n=0; n<markers.length; n++ ) {
 					
