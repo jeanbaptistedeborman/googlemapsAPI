@@ -35,7 +35,7 @@
 				var myLatlng1 = new google.maps.LatLng(50.902, 4.270248);
 				var myLatlng2 = new google.maps.LatLng(50.775754,4.478302);
 				
-				var bounds = new google.maps.LatLngBounds(myLatlng1, myLatlng2); 
+			
 				
 			
 				
@@ -48,10 +48,12 @@
 					map : map,
 					title : 'Au Vieux Spijtigen Duivel',
 				});
+					var bounds = new google.maps.LatLngBounds(myLatlng); 
 				
 				markers.push (marker1 ); 
 
 				var myLatlng = new google.maps.LatLng(50.848672, 4.356258);
+				bounds.extend (myLatlng); 
 				var marker2 = new google.maps.Marker({
 					icon : 'cafe.png',
 					position : myLatlng,
@@ -63,6 +65,7 @@
 				
 				
 				var myLatlng = new google.maps.LatLng(50.794583, 4.334572);
+				bounds.extend (myLatlng); 
 				var marker2 = new google.maps.Marker({
 					icon : 'cafe.png',
 					position : myLatlng,
@@ -72,6 +75,7 @@
 				markers.push (marker2 );
 				
 				var myLatlng = new google.maps.LatLng(50.848288, 4.3514);
+				bounds.extend (myLatlng); 
 				var marker2 = new google.maps.Marker({
 					icon : 'cafe.png',
 					position : myLatlng,
@@ -81,6 +85,7 @@
 				markers.push (marker2 );
 				
 				var myLatlng = new google.maps.LatLng(50.848533, 4.350081);
+				bounds.extend (myLatlng); 
 				var marker2 = new google.maps.Marker({
 					icon : 'cafe.png',
 					position : myLatlng,
@@ -90,6 +95,7 @@
 				markers.push (marker2 );
 				
 				var myLatlng = new google.maps.LatLng(50.848926, 4.347174);
+				bounds.extend (myLatlng); 
 				var marker2 = new google.maps.Marker({
 					icon : 'cafe.png',
 					position : myLatlng,
@@ -99,6 +105,7 @@
 				markers.push (marker2 );
 				
 					var myLatlng = new google.maps.LatLng(50.848261, 4.350725);
+					bounds.extend (myLatlng); 
 				var marker2 = new google.maps.Marker({
 					icon : 'cafe.png',
 					position : myLatlng,
@@ -110,7 +117,7 @@
 				///PISCINES
 
 				
-					//map.fitBounds(markers);
+					map.fitBounds(bounds);
 				
 				
 				
