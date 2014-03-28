@@ -50,15 +50,16 @@
 					
 					
 				el.onclick = (function () {
-					//alert ('click');
-					
-					var current_index = n; 
-					return function () {
+					var index=n;
+					function test (){
 						
-						alertWrapper (current_index);
-										
-					};  
-						//alert (n); 
+						alert (index);
+						
+					};
+					
+					return test; 
+					
+					
 				}) ();
 				
 				 
