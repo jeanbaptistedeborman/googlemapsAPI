@@ -1,77 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<meta charset="utf-8">
-
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-		<title>index</title>
-		<meta name="description" content="">
-		<meta name="author" content="Jean-Baptiste">
-
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-		<style>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<style type="text/css">
+			html {
+				height: 100%
+			}
 			body {
 				height: 100%;
-				margin: 30px auto 0 auto;
-				padding: 0;
-				width:800px;
-				font-family:Arial, Helvetica, sans-serif; 
+				margin: 0;
+				padding: 0
 			}
-			</style>
+			#map-canvas {
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+		<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD6phFHJZTYJXyp5oNOgR0QBQI6w5vn0eg&sensor=true"></script>
+		<script type="text/javascript">
 		
-	</head>
+	
+			function initialize() {
+				var markers = [];
+				var mapOptions = {
+					center : new google.maps.LatLng(50.5333, 4.7667),
+					zoom : 7
+				};
+				var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+				
+				var myLatlng1 = new google.maps.LatLng(50.902, 4.270248);
+				var myLatlng2 = new google.maps.LatLng(50.775754,4.478302);
+				
+				var bounds = new google.maps.LatLngBounds(myLatlng1, myLatlng2); 
+				
+				map.fitBounds(bounds);
+				
+				
+				
+				var myLatlng = new google.maps.LatLng(50.807962, 4.336873);
+				var marker1 = new google.maps.Marker ({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : 'Au Vieux Spijtigen Duivel',
+				});
+				
+				markers.push (marker1 ); 
 
-	<body>
-		<div>
-			<header>
-				<h1>Page d'accueil</h1>
-			</header>
-			</div>
-		
+				var myLatlng = new google.maps.LatLng(50.848672, 4.356258);
+				var marker2 = new google.maps.Marker({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : 'À la Mort Subite'
+				});
+				markers.push (marker2 ); 
+				
+				
+				
+				var myLatlng = new google.maps.LatLng(50.794583, 4.334572);
+				var marker2 = new google.maps.Marker({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : "Misverstand ('t)"
+				});
+				markers.push (marker2 );
+				
+				var myLatlng = new google.maps.LatLng(50.848288, 4.3514);
+				var marker2 = new google.maps.Marker({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : "La Bécasse"
+				});
+				markers.push (marker2 );
+				
+				var myLatlng = new google.maps.LatLng(50.848533, 4.350081);
+				var marker2 = new google.maps.Marker({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : "Café de la Bourse"
+				});
+				markers.push (marker2 );
+				
+				var myLatlng = new google.maps.LatLng(50.848926, 4.347174);
+				var marker2 = new google.maps.Marker({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : "Taverne Greenwich"
+				});
+				markers.push (marker2 );
+				
+					var myLatlng = new google.maps.LatLng(50.848261, 4.350725);
+				var marker2 = new google.maps.Marker({
+					icon : 'cafe.png',
+					position : myLatlng,
+					map : map,
+					title : "Café Cirio"
+				});
+				markers.push (marker2 );
+				
+				///PISCINES
 
-			<div>
-				
-			  <p><a href="index_brussels.html">Voir tous les lieux sur une carte</a></p>
-				<p>Articles: </p>
-			  <ul>	
-	<li>Piscines</li>
-			<ul><li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.796184,%22A%22:4.317236999999977%7D,%22title%22:%22N%C3%A9mo%2033%22%7D">Némo 33</a></li>
-				<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.805094,%22A%22:4.3483079999999745%7D,%22title%22:%22Piscine%20de%20Longchamp%22%7D">Piscine de Longchamp</a></li>
-				<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.837773,%22A%22:4.345902000000024%7D,%22title%22:%22Les%20Bains%20de%20la%20Ville%20de%20Bruxelles%22%7D">Les Bains de la Ville de Bruxelles</a></li>
-				<li>....</li>
+var myLatlng = new google.maps.LatLng(50.796184, 4.317237);
+				var marker2 = new google.maps.Marker({
+					icon : 'piscine.png',
+					position : myLatlng,
+					map : map,
+					title : "Némo 33"
+				}); 
+				markers.push (marker2 );
 				
 				
 				
-				
-				
-			</ul>
-			<li>Cafés</li>
-			<ul><li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.807962,%22A%22:4.336872999999969%7D,%22title%22:%22Au%20Vieux%20Spijtigen%20Duivel%22%7D">Au Vieux Spijtigen Duivel</a></li>
-				<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.848672,%22A%22:4.356258000000025%7D,%22title%22:%22%C3%80%20la%20Mort%20Subite%22%7D">À la Mort Subite</a></li>
-				<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.848288,%22A%22:4.351400000000012%7D,%22title%22:%22La%20B%C3%A9casse%22%7D">La Bécasse</a></li>
-				<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.848533,%22A%22:4.350081000000046%7D,%22title%22:%22Caf%C3%A9%20de%20la%20Bourse%22%7D">Café de la Bourse</a></li>
-				<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.848926,%22A%22:4.347173999999995%7D,%22title%22:%22Taverne%20Greenwich%22%7D">Taverne Greenwich</a></li>
-					<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.848261,%22A%22:4.350725000000011%7D,%22title%22:%22Caf%C3%A9%20Cirio%22%7D"position":%7B"k":50.848261,"A":4.350725000000011%7D,"title":"Café%20Cirio"%7D">Café Cirio</a></li>
-					<li><a href="destination.html?data=%7B%22position%22:%7B%22k%22:50.794583,%22A%22:4.33457199999998%7D,%22title%22:%22Misverstand%20('t)%22%7D">Misverstand ('t)</a></li>
-					<li>...</li>
+			var myLatlng = new google.maps.LatLng(50.805094, 4.348308);
+				var marker2 = new google.maps.Marker({
+					icon : 'piscine.png',
+					position : myLatlng,
+					map : map,
+					title : "Piscine de Longchamp"
+				}); 
+				markers.push (marker2 );
 				
 				
 				
+				var myLatlng = new google.maps.LatLng(50.837773, 4.345902);
+				var marker2 = new google.maps.Marker({
+					icon : 'piscine.png',
+					position : myLatlng,
+					map : map,
+					title : "Les Bains de la Ville de Bruxelles"
+				}); 
+				markers.push (marker2 );
 				
 				
-			</ul>
-			<li>...</li>
-</ul>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				for (var n=0; n<markers.length; n++ ) {
+					
+					var mark = markers[n];
+					
+						google.maps.event.addListener(mark, 'click', function() {
+							var data={}
+							data.position = this.position;
+							data.title = this.title; 
+							var url = "destination_bis.html?data=" + encodeURI (JSON.stringify(data));
+							//console.log (url);
+							//alert (url); 
+							
+							window.location.href = url; 
+				});
+					
+				}
+				
+				
 			
 
+
+				/// searchbox
+
+				// Create the search box and link it to the UI element.
+				var input = /** @type {HTMLInputElement} */(
+					document.getElementById('pac-input'));
+				map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+				var searchBox = new google.maps.places.SearchBox(
+				/** @type {HTMLInputElement} */(input));
+
+				google.maps.event.addListener(searchBox, 'places_changed', function() {
+					console.log('places_changed');
+					var places = searchBox.getPlaces();
+
+					for (var i = 0, marker; marker = markers[i]; i++) {
+						marker.setMap(null);
+					}
+
+					// For each place, get the icon, place name, and location.
+					markers = [];
+
+					var bounds = new google.maps.LatLngBounds();
+					for (var i = 0, place; place = places[i]; i++) {
+						console.log(place);
+
+						var type = place.types[0];
+
+						var image = {
+							url : place.icon,
+							size : new google.maps.Size(71, 71),
+							origin : new google.maps.Point(0, 0),
+							anchor : new google.maps.Point(17, 34),
+							scaledSize : new google.maps.Size(25, 25)
+						};
+
+						// Create a marker for each place.
+						var marker = new google.maps.Marker({
+							map : map,
+							icon : image,
+							title : place.name,
+							position : place.geometry.location
+						});
+
+						
+						markers.push(marker);
+						
+					
+						bounds.extend(place.geometry.location);
+
+					}
+					console.log(bounds.length);
+					map.fitBounds(bounds);
+					console.log(type);
+					if (type !== "street_address") {
+						map.setZoom(12);
+					}
+				});
+
+			}
+
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+	</head>
+	<body>
 		
-		</div>
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+		<div id="map-canvas"/>
 	</body>
 </html>
